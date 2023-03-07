@@ -1,0 +1,130 @@
+.main {
+    @include adaptiveValue("padding-top", 95, 81);
+   @include adaptiveValue("padding-bottom", 80, 50);
+height: 100vh;
+	border-bottom: 5px solid #fff;
+   overflow: hidden;
+
+   // .main__container
+
+   &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+       @include adaptiveValue("row-gap", 120, 80);
+   }
+
+   // .main__lamp
+
+   &__lamp {}
+
+   // .main__name
+
+   &__name {}
+}
+
+.lamp {
+   transform-origin: 50% 0%;
+
+   top: rem(-2);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   position: relative;
+z-index: 6;
+   animation: moove 2s alternate-reverse ease-in-out infinite;
+
+   @keyframes  moove  { 
+       0%{ 
+         transform: rotate(20deg);
+
+       } 
+        100%{
+         transform: rotate(-20deg);
+        }  
+      }
+
+
+   &__rope {
+      width: rem(4);
+      height: rem(150);
+      background-color: #fff;
+   }
+
+   // .lamp__object
+
+   &__object {
+      background: #1e1e1e url(@img/lamp.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100px;
+      height: 56px;
+      position: relative;
+      z-index: 51;
+
+  
+
+   }
+
+   // .lamp__light
+
+   &__light {
+      position: absolute;
+      bottom: rem(-197);
+      left: rem(2);
+      width: rem(95);
+      height: rem(200);
+      background: linear-gradient(180deg, rgba(255,239,0,1) 0%, rgba(238, 238, 229, 0.313) 80%, rgba(238, 238, 229, 0.147) 100%);
+      transform:  perspective(200px) translateZ(-22px) rotateX(74deg);/*центры, делает как трапеции*/
+      transform-origin: top center;
+      filter: blur(5px);
+     z-index: 2;
+
+   //   animation: light 2s alternate-reverse ease-in-out infinite;
+
+     @keyframes light   {  
+      0%{ 
+         // height: rem(217);
+         transform: skewY(-20deg);
+
+      } 
+      50%{
+         height: rem(202);
+         // width: rem(155);
+
+      }
+       100%{
+         // height: rem(217);
+         transform: skewY(20deg);
+         // width: rem(155);
+
+
+       } 
+       }
+
+
+
+   }
+}
+
+.title {
+   position: relative;
+z-index: -1;
+   text-align: center;
+   @include adaptiveValue("font-size", 70, 40);
+   font-weight: 900;
+   text-transform: uppercase;
+
+  
+     animation: shad 2s alternate-reverse ease-in-out infinite;
+
+}
+
+@keyframes  shad  { 
+    0%{
+      text-shadow: rem(6) rem(4) rem(5) #000;
+     }  
+    100%{
+      text-shadow: rem(-6) rem(4) rem(5) #000;
+    }  
+   }

@@ -1,0 +1,45 @@
+
+.works {
+   height: 100vh;
+   @include adaptiveValue("padding-top", 125, 81);
+   border-bottom: 5px solid #fff;
+   // .works__container
+
+   &__container {
+   }
+
+   // .works__grid
+
+   &__grid {
+
+   }
+}
+.title-second {
+   text-transform: uppercase;
+
+}
+.grid {
+display: grid;
+grid-template-columns: repeat(3, rem(350));
+grid-template-rows: repeat(3, rem(250));
+   // .grid__item
+
+   &__item {
+      max-width: rem(350);
+      border: rem(2) solid #282626;
+      border-radius: rem(5);
+      img{
+         width: 100%;
+      }
+   }
+}
+.item--1 {
+   
+}
+.item--2 {
+}
+.item--3 {
+   
+}
+.item--4 {
+}
